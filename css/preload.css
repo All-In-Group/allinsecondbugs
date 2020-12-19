@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Exo:300");
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Exo", sans-serif;
+    font-size: 16px;
+
+}
+
+.wrap-loader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #179879;
+    z-index: 10000;
+}
+
+.loader {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+}
+.loader img{
+    width: 100%;
+    height: 100%;
+}
+
+.loader-text {
+    color: #FFF;
+    margin-top: 15px;
+    letter-spacing: 6px;
+    opacity: .2;
+    -webkit-animation: blink 1s ease-out infinite alternate;
+    animation: blink 1s ease-out infinite alternate;
+}
+
+@-webkit-keyframes blink {
+    from {
+        opacity: .2;
+    }
+    to {
+        opacity: .75;
+    }
+}
+
+@keyframes blink {
+    from {
+        opacity: .2;
+    }
+    to {
+        opacity: .75;
+    }
+}
