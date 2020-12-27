@@ -60,7 +60,7 @@ li {
 
 .btn-white {
     /*display: block;*/
-    width: 31%;
+    width: 35%;
     margin: 10px auto;
     font-family: "Cairo", sans-serif;
     font-size: calc(14px + 2 * ((100vw - 320px) / (1280 - 320)));
@@ -242,6 +242,16 @@ header .navbar-brand > p {
     white-space: nowrap;
 }
 
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-container::before,
+.navbar-container::after {
+    content: none;
+}
+
 .navbar-default .navbar-brand > img {
     width: 80px;
     position: absolute;
@@ -260,6 +270,79 @@ header .navbar-brand > p {
 
 .navbar-default .navbar-nav > li > a:focus {
     color: #fff;
+}
+
+.navbar-default .navbar-collapse::before,
+.navbar-default .navbar-collapse::after {
+    content: none;
+}
+
+.navbar-m-menu {
+    display: flex !important;
+    justify-content: space-between;
+}
+ul.nav.navbar-nav {
+    float: none !important;
+}
+
+/*---------------languages----------------*/
+
+.options-languages {
+    margin-left: 30px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.options-languages:hover .sub_lang {
+    display: block;
+}
+
+.languages-title > img {
+    padding: 9px 0;
+    cursor: pointer;
+}
+
+.sub_lang {
+    display: none;
+    position: absolute;
+    padding: 10px 15px;
+    width: 120px;
+    right: 0;
+    background-color: #179879;
+    box-shadow: 0 2px 2px rgb(110, 187, 150);
+}
+
+.sub_lang > li {
+    padding: 2px 0;
+}
+
+.sub_lang > li {
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.sub_lang > li:hover {
+    color: rgb(206, 206, 206);
+}
+
+.sub_lang > li > img {
+    width: 25px;
+}
+
+.options-languages-mobile {
+    display: none;
+}
+
+.sub_lang-mobile {
+    display: flex;
+    padding: 0 10px;
+}
+
+.sub_lang-mobile > li {
+    margin-right: 15px;
 }
 
 /* slider*/
@@ -1765,8 +1848,30 @@ footer {
 
 /*768*/
 @media screen and (max-width: 768px) {
-    ul.list-tab {
+    .navbar-container {
         display: block;
+    }
+    .navbar-m-menu {
+        display: block !important;
+        margin-top: 20px;
+    }
+
+    .options-languages {
+        display: none !important;
+    }
+
+    .options-languages-mobile {
+        display: block;
+    }
+    ul.list-tab {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-column-gap: 10px;
+        justify-content: center;
+    }
+
+    .list-tab li {
+        width: 100%;
     }
 
     a.tab-articl h3 {
@@ -2069,11 +2174,11 @@ footer {
 
 @media only screen and (max-width: 425px) {
     .btn-green {
-        width: 103px;
+        width: 140px;
     }
 
     .btn-white {
-        width: 103px;
+        width: 140px;
     }
 
     .navbar-default .navbar-brand > img {
